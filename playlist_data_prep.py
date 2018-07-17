@@ -190,19 +190,3 @@ in_concert_names.to_csv('in_concert_names.csv',index=False)
 artist_similarity_df = pd.DataFrame(artist_similarity_filt)
 artist_similarity_df.to_csv('artist_similarity_df.csv',index=False)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
