@@ -184,9 +184,3 @@ venue_geo_df.to_csv('venue_geo.csv',index=False)
 venue_location = pd.merge(venue_geo_df, venue_address, left_on='venue', right_on='venue', how='left')
 venue_location.to_csv('venue_location.csv',index=False)
 
-
-
-
-
-
-
