@@ -1,0 +1,3 @@
+# StageFinder
+
+I created a website to recommend venues to bands based on their desired location, musical style, and fanbase.  The project was created using python with data from listeners’ last.fm playlists as well as concert data scraped from songkick.  I used last.fm playlist data to determine the similarity among musical groups, and combined this similarity with concert history data (who has played at what venues) in a collaborative filtering model to create the recommendations.  I also geolocated the venues in order to provide recommendations which are restricted to a given geographic area.   
