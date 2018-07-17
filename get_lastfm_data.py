@@ -108,5 +108,3 @@ for i in range(61276,100000):
                 
 user_recenttracks_df = pd.concat(user_recenttracks_list)
 user_recenttracks_df.to_csv('user_recenttracks.csv',index=False)
-
-
