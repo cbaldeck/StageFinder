@@ -2,12 +2,13 @@ library(shiny)
 library(leaflet)
 library(htmltools)
 
-# Test stuff (MG)
+# Here is input list for testing the functions
 # input <- list(
 # 	artistname="Rodney Atkins", 
 # 	map_bounds=data.frame(south=32.91677,north=46.37749,east=-82.70731,west=-108.635)
 # )
 
+## Read in all the data
 user_df = read.csv("user_df.csv")
 item_df = read.csv("item_df.csv")
 load("venue_rank_list.RData")
@@ -19,6 +20,7 @@ artistname_lower = tolower(artistname_list)
 artistname_lower[547] = "Nothing"
 names(venue_rank_list) = artistname_lower
 
+## Set up the user interface
 ui <- fluidPage(
   h2("StageFinder",align = "center"),
   h4("A venue recommendation system for bands",align = "center"),
@@ -39,7 +41,7 @@ ui <- fluidPage(
   
 )
 
-
+## Set up the dyanmic server component
 server <- function(input, output) {
   
   #artistname = input$artistname (keep input as is)
@@ -88,6 +90,7 @@ server <- function(input, output) {
     }
   })
   
+  ## Create the dynamic map
   observe({
     req(PointsInBounds())
     if(nrow(PointsInBounds())>0 & !is.null(PointsInBounds())){
@@ -96,6 +99,7 @@ server <- function(input, output) {
     }
   })
   
+  ## Create the dynamic data frame
   observe({
     req(PointsInBounds())
     table_show = data.frame("Venue" = PointsInBounds()$vname,"City" = PointsInBounds()$city_state)
