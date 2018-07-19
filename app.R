@@ -1,15 +1,12 @@
+## This is the code for creating the Shiny app.  This app is designed to display the top ten recommended venues (or up to 
+## ten venues) for the area displayed on the map.  The app needs to detect any changes in the boundaries of the map and 
+## then pull and display the venue data according to those boundaries. 
+
 library(shiny)
 library(leaflet)
 library(htmltools)
 
-# Here is input list for testing the functions
-# input <- list(
-# 	artistname="Rodney Atkins", 
-# 	map_bounds=data.frame(south=32.91677,north=46.37749,east=-82.70731,west=-108.635)
-# )
-
-## Read in all the data
-user_df = read.csv("user_df.csv")
+## Read in the data
 item_df = read.csv("item_df.csv")
 load("venue_rank_list.RData")
 locations = read.csv("venue_location.csv")
@@ -19,6 +16,12 @@ locations$city_state = paste(locations$city,locations$state,sep=", ")
 artistname_lower = tolower(artistname_list)
 artistname_lower[547] = "Nothing"
 names(venue_rank_list) = artistname_lower
+
+# Here is an input list for testing the functions
+# input <- list(
+# 	artistname="Rodney Atkins", 
+# 	map_bounds=data.frame(south=32.91677,north=46.37749,east=-82.70731,west=-108.635)
+# )
 
 ## Set up the user interface
 ui <- fluidPage(
@@ -31,8 +34,8 @@ ui <- fluidPage(
     
     # Change to select input for testing
     #selectInput(inputId = "artistname", label=h5("Enter Artist Name"), selected = artistname_list[1],
-    #	choices = artistname_list)
-    #h5("Based on the selected area, here are the top 10 recommended venues for you"),
+    #	choices = artistname_list),
+    
     tableOutput("table")
     ),
   mainPanel(
@@ -112,6 +115,6 @@ server <- function(input, output) {
 
 shinyApp(ui, server)
 
+## Lines used to deploy app to shinyapps.io
+#library(rsconnect)
 #rsconnect::deployApp("~/Documents/Shiny/StageFinder_v2")
-
-
