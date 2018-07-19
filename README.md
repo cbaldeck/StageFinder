@@ -12,4 +12,6 @@ concert_data_prep.py: The concert history data are cleaned up and prepared.  Geo
 
 playlist_data_prep.py: The lastfm playlist data are cleaned up and prepared.  Artist names are reconciled between the two datasets.
 
+app_prep.R: The output was reshaped for input into the Shiny app.
+
 app.R: This is where the shiny app was created.  The app displays a map and recommendations are continuously updated based on the location shown in the map.
