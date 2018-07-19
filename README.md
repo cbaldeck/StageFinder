@@ -4,14 +4,14 @@ I created a website (stagefinder.site) to recommend venues to bands based on the
 
 Here is a list of files and what they contain:
 
-get_lastfm_data.py: Thousands of lastfm playlists are gathered and stored in a data frame using the Last.fm api.
-
 songkick_scraper.py: Thousands of concert events are scraped from the songkick webpage.
 
-concert_data_prep.py: The concert history data are cleaned up and prepared.  Geographic information is extracted and addresses are geolocated.
+get_lastfm_data.py: Thousands of lastfm playlists are gathered and stored in a data frame using the Last.fm api.
+
+concert_data_prep.py: The concert history data are cleaned up and prepared.  Geographic information on venues is extracted and addresses are geolocated.
 
 playlist_data_prep.py: The lastfm playlist data are cleaned up and prepared.  Artist names are reconciled between the two datasets.
 
-app_prep.R: The output was reshaped for input into the Shiny app.
+app_prep.R: The output of the analysis was reshaped to save memory for input into the Shiny app.
 
 app.R: This is where the shiny app was created.  The app displays a map and recommendations are continuously updated based on the location shown in the map.
