@@ -1,6 +1,6 @@
 # StageFinder - A venue recommendation system for bands
 
-[StageFinder](http://stagefinder.site) is a web app that recommends venues for bands to perform in based on the band's musical style, fanbase, and desired location.  The recommendation system was built using python from listener playlists from last.fm and concert data from songkick.  The front-end was built using R/shiny with leaflet and displays a map with the top ten recommended venues within the map area.  This project was completed as part of the [Insight Data Science](https://www.insightdatascience.com/) program in June 2018.
+[StageFinder](http://stagefinder.site) is a web app that recommends venues for bands to perform in based on the band's musical style, fanbase, and desired location.  The recommendation system was built using python from listener playlists from [last.fm](http://last.fm) and concert data from [Songkick](http://songkick.com).  The front-end was built using R/shiny with leaflet and displays a map with the top ten recommended venues within the map area.  This project was completed as part of the [Insight Data Science](https://www.insightdatascience.com/) program in June 2018.
 
 ### Method
 
