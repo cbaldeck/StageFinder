@@ -1,12 +1,16 @@
 # StageFinder - A venue recommendation system for bands
 
-I created a website (stagefinder.site) to recommend venues to bands based on their musical style, fanbase and desired location.  The project was created using python and R/shiny with data from listeners’ last.fm playlists as well as concert data scraped from songkick.  I used people's last.fm playlists to determine similarity among musical groups.  This information was combined with concert history data (who has played where) in a collaborative filtering model to create the recommendations.  I also geolocated the venues in order to provide recommendations which are restricted to a given geographic area.   
+StageFinder (http://stagefinder.site) is a web app that recommends venues for bands to perform in based on the band's musical style, fanbase, and desired location.  The recommendation system was built using python from listener playlists from last.fm and concert data from songkick.  The front-end was built using R/shiny with leaflet and displays a map with the top ten recommended venues within the map area.  This project was completed as part of the Insight Data Science Program in June 2018.
 
-## Here is a list of files and what they contain:
+### Method
+
+50,000 user playlists were collected from http://last.fm using the last.fm API.  These listener playlists were used to determine similarity among musical groups using cosine similarity.  Additionally, information on all concerts occurring in the United States over the past year were scraped from http://songkick.com using python selenium, resulting in a dataframe of over 300,000 concert events.  These two data sources were combined in a custom collaborative filtering model to recommend venues to bands.  For each artist, the similarity to each other artist was used to assign values to all venue/artist interactions in the concert history dataframe.  These values were summed for each venue across all artists to create a final venue recommendation score (a high value for this score indicates that many very similar artists have played at that venue).  Finally, venue addresses were geolocated using the Google API to filter recommendations according to a given geographic area.  
+
+### List of files and what they contain:
 
 * songkick_scraper.py: Thousands of concert events are scraped from the songkick webpage.
 
-* get_lastfm_data.py: Thousands of lastfm playlists are gathered and stored in a data frame using the Last.fm api.
+* get_lastfm_data.py: Thousands of last.fm playlists are gathered and stored in a data frame using the Last.fm API.
 
 * concert_data_prep.py: The concert history data are cleaned up and prepared.  Geographic information on venues is extracted and addresses are geolocated.
 
