@@ -2,7 +2,7 @@
 
 I created a website (stagefinder.site) to recommend venues to bands based on their musical style, fanbase and desired location.  The project was created using python and R/shiny with data from listeners’ last.fm playlists as well as concert data scraped from songkick.  I used people's last.fm playlists to determine similarity among musical groups.  This information was combined with concert history data (who has played where) in a collaborative filtering model to create the recommendations.  I also geolocated the venues in order to provide recommendations which are restricted to a given geographic area.   
 
-##Here is a list of files and what they contain:
+## Here is a list of files and what they contain:
 
 * songkick_scraper.py: Thousands of concert events are scraped from the songkick webpage.
 
