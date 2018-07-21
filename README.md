@@ -8,7 +8,7 @@ StageFinder (http://stagefinder.site) is a web app that recommends venues for ba
 
 ### List of files and what they contain:
 
-* songkick_scraper.py: Thousands of concert events are scraped from the songkick webpage.
+* '''songkick_scraper.py''': Thousands of concert events are scraped from the songkick webpage.
 
 * get_lastfm_data.py: Thousands of last.fm playlists are gathered and stored in a data frame using the Last.fm API.
 
